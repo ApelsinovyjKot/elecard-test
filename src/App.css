@@ -1,38 +1,82 @@
-.App {
+.rootList {
+  font-weight: 700;
+  font-size: 25px;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(153, 235, 255, 1) 0%,
+    rgba(103, 213, 236, 1) 100%
+  );
+
   text-align: center;
+  margin-top: 5px;
+  cursor: pointer;
+  margin: 4px auto;
+  padding: 16px;
+  border-radius: 5px;
+  width: 90%;
+  cursor: pointer;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.rootList:hover {
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(107, 227, 255, 1) 0%,
+    rgba(36, 200, 235, 1) 100%
+  );
+}
+.categoryList {
+  text-align: center;
+  margin-top: 5px;
+  padding: 10px;
+  cursor: pointer;
+  margin: 4px auto;
+  color: #fff;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 118, 20, 1) 0%,
+    rgba(255, 84, 17, 1) 100%
+  );
+  cursor: pointer;
+  font-size: 20px;
+  padding: 16px;
+  border-radius: 5px;
+  width: 90%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.categoryList:nth-child(4n + 1) {
+  background: linear-gradient(
+    90deg,
+    rgba(93, 12, 255, 1) 0%,
+    rgba(155, 0, 250, 1) 100%
+  );
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.categoryList:nth-child(4n + 2) {
+  background: linear-gradient(
+    90deg,
+    rgb(201, 67, 145) 0%,
+    rgb(179, 15, 102) 100%
+  );
+}
+
+.categoryList:nth-child(4n + 3) {
+  background: linear-gradient(
+    90deg,
+    rgba(20, 159, 255, 1) 0%,
+    rgba(17, 122, 255, 1) 100%
+  );
+}
+
+.listByCategory {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-direction: row;
+  padding: 5px;
 }
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.imageName {
+  margin-top: 10px;
+  margin-left: 5px;
 }
