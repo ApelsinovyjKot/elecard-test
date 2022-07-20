@@ -1,4 +1,4 @@
-.rootList {
+.root-list-title {
   font-weight: 700;
   font-size: 25px;
   background: rgb(255, 255, 255);
@@ -9,17 +9,16 @@
     rgba(103, 213, 236, 1) 100%
   );
 
-  text-align: center;
   margin-top: 5px;
   cursor: pointer;
-  margin: 4px auto;
+  margin: 10px 40px;
   padding: 16px;
   border-radius: 5px;
-  width: 90%;
+  width: 200px;
   cursor: pointer;
 }
 
-.rootList:hover {
+.root-list-title:hover {
   background: rgb(255, 255, 255);
   background: linear-gradient(
     90deg,
@@ -28,12 +27,12 @@
     rgba(36, 200, 235, 1) 100%
   );
 }
-.categoryList {
+.category-list {
   text-align: center;
   margin-top: 5px;
   padding: 10px;
   cursor: pointer;
-  margin: 4px auto;
+  margin: 10px 80px;
   color: #fff;
   background: linear-gradient(
     90deg,
@@ -44,10 +43,9 @@
   font-size: 20px;
   padding: 16px;
   border-radius: 5px;
-  width: 90%;
+  width: 200px;
 }
-
-.categoryList:nth-child(4n + 1) {
+.list:nth-child(4n + 1) > .category-list {
   background: linear-gradient(
     90deg,
     rgba(93, 12, 255, 1) 0%,
@@ -55,7 +53,7 @@
   );
 }
 
-.categoryList:nth-child(4n + 2) {
+.list:nth-child(4n + 2) > .category-list {
   background: linear-gradient(
     90deg,
     rgb(201, 67, 145) 0%,
@@ -63,7 +61,7 @@
   );
 }
 
-.categoryList:nth-child(4n + 3) {
+.list:nth-child(4n + 3) > .category-list {
   background: linear-gradient(
     90deg,
     rgba(20, 159, 255, 1) 0%,
@@ -71,12 +69,16 @@
   );
 }
 
-.listByCategory {
+.list-by-category {
   display: flex;
   flex-direction: row;
   padding: 5px;
+  margin: 10px 140px;
+  width: 500px;
+  background-color: aquamarine;
+  border-radius: 5px;
 }
-.imageName {
+.image-name {
   margin-top: 10px;
   margin-left: 5px;
 }

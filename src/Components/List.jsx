@@ -57,23 +57,28 @@ const List = ({ data, onImageClick }) => {
   const [rootOpened, setRootOpened] = useState(false);
   return (
     <div>
-      <div className="rootList" onClick={() => setRootOpened(!rootOpened)}>
+      <div
+        className="root-list-title"
+        onClick={() => setRootOpened(!rootOpened)}
+      >
         Категории
       </div>
       {rootOpened &&
         categories.map((cat, index) => {
           return (
-            <div className="categoryList" key={index}>
-              <div
-                style={{ cursor: "pointer" }}
-                onClick={() => openCategory(cat.category)}
-              >
-                {cat.category}
+            <div key={index} className="list">
+              <div className="category-list">
+                <div
+                  style={{ cursor: "pointer" }}
+                  onClick={() => openCategory(cat.category)}
+                >
+                  {cat.category}
+                </div>
               </div>
               {cat.state &&
                 listByCategories[cat.category].map((item, index) => {
                   return (
-                    <div className="listByCategory" key={index}>
+                    <div className="list-by-category" key={index}>
                       <img
                         style={{
                           width: 50,
@@ -85,7 +90,7 @@ const List = ({ data, onImageClick }) => {
                         alt=""
                         onClick={() => onImageClick(item.image)}
                       />
-                      <div className="imageName">{getName(item)}</div>
+                      <div className="image-name">{getName(item)}</div>
                     </div>
                   );
                 })}
