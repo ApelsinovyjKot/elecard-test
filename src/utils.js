@@ -1,5 +1,5 @@
 export const timeConverter = (timestamp) => {
-  var a = new Date(timestamp * 1000);
+  var a = new Date(timestamp);
   var months = [
     "Jan",
     "Feb",

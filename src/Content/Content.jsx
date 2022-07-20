@@ -60,8 +60,10 @@ const Content = () => {
 
   return (
     <div className="content">
-      <ViewSwitcher value={viewType} onChange={changeViewType} />
-      <SortSwitcher value={sortType} onChange={changeSortType} />
+      <div style={{ paddingLeft: 35 }}>
+        <ViewSwitcher value={viewType} onChange={changeViewType} />
+        <SortSwitcher value={sortType} onChange={changeSortType} />
+      </div>
       {loading === true ? (
         <div
           style={{

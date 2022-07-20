@@ -1,7 +1,7 @@
 import { Button, Pagination } from "@mui/material";
 import React, { useState } from "react";
 import { useEffect } from "react";
-import { timeConverter } from "../utils";
+import { getName, timeConverter } from "../utils";
 
 const CardList = ({ data }) => {
   const [cards, setCards] = useState(data);
@@ -41,25 +41,31 @@ const CardList = ({ data }) => {
       setCards(data);
       return;
     }
-
     const closedCards = localStorage.closedCards.split(",");
     if (!closedCards) return;
 
-    const filtered = data.filter((card) => !closedCards.includes(card.image));
+    const filtered = data.filter(
+      (card) => !closedCards.includes(String(card.id))
+    );
     setCards(filtered);
     setClosed(closedCards);
   }, [data]);
 
   const restore = () => {
+    data.forEach((i) => {
+      i.opacity = 1;
+    });
     setCards(data);
     localStorage.removeItem("closedCards");
   };
 
   return (
-    <div style={{ textAlign: "center" }}>
-      <Button variant="contained" onClick={restore}>
-        Восстановить карточки
-      </Button>
+    <div>
+      <div style={{ textAlign: "center" }}>
+        <Button variant="contained" onClick={restore}>
+          Восстановить карточки
+        </Button>
+      </div>
       <div className="container">
         {currentCards.map((card) => {
           return (
@@ -86,7 +92,10 @@ const CardList = ({ data }) => {
                 </button>
               </div>
               <div className="card-body">
-                <h4>{timeConverter(card.timestamp)}</h4>
+                <div className="card-title">Название: {getName(card)}</div>
+                <div>Категория: {card.category}</div>
+                <div>Размер: {card.filesize}</div>
+                <div>Время: {timeConverter(card.timestamp)}</div>
               </div>
             </div>
           );
